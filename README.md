@@ -12,8 +12,8 @@ If you use this project don't forget to give a ⭐ [star](https://github.com/r37
 ## 💬 Usage
 
 ```typescript
-import { ofAnyCase } from "https://raw.githubusercontent.com/r37r0m0d3l/denof/master/mod.ts";
-const promise = new Promise((resolve, _reject) => {
+import { ofAnyCase } from "https://deno.land/x/denof/mod.ts";
+const promise = () => new Promise((resolve, _reject) => {
   resolve({ data: true });
 });
 const config = {
@@ -23,7 +23,7 @@ const config = {
   timeout: 1000, // ⏱️ Delay before timeout error
 };
 // no error thrown
-const [result, error] = await ofAnyCase(promise, config);
+const [result, error] = await ofAnyCase(promise(), config);
 console.log(result); // { data: true }
 console.warn(error); // no error thrown, so it's undefined
 ```
