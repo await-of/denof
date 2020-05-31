@@ -28,6 +28,56 @@ console.log(result); // { data: true }
 console.warn(error); // no error thrown, so it's undefined
 ```
 
+## Import
+
+### Import from URL
+
+```typescript
+import {
+  Of, of,
+  ofAny, ofAnyCase, ofCase, ofError,
+  ofIt, ofOutcome, ofResult, ofSync
+} from "https://deno.land/x/denof/mod.ts";
+```
+
+### Bundled from URL
+
+```typescript
+import {
+  Of, of,
+  ofAny, ofAnyCase, ofCase, ofError,
+  ofIt, ofOutcome, ofResult, ofSync
+} from "https://deno.land/x/denof/denof.bundle.js";
+```
+
+### From `importmap.json`.
+
+Add entry to `imports`
+
+```json
+{
+  "imports": {
+    "of": "https://deno.land/x/denof/mod.ts"
+  }
+}
+```
+
+Then run with `importmap` argument.
+
+```bash
+deno run --importmap=importmap.json --unstable YourExecutableFile.ts
+```
+
+Now you can import with shortcut
+
+```typescript
+import {
+  Of, of,
+  ofAny, ofAnyCase, ofCase, ofError,
+  ofIt, ofOutcome, ofResult, ofSync
+} from "of";
+```
+
 ## 🗺️ Discover more
 
 [My other projects](https://r37r0m0d3l.icu/open_source_map)
