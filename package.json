@@ -4,6 +4,7 @@
     "typescript-deno-plugin": "1.29.0"
   },
   "scripts": {
+    "build": "deno bundle ./mod.ts ./denof.bundle.js",
     "format:package": "deno fmt ./deps.ts && deno fmt ./mod.ts && deno fmt ./test.ts",
     "format:source": "deno fmt ./src/**/*.ts",
     "run": "deno run  --allow-all --unstable -c tsconfig.json mod.ts",
