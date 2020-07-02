@@ -44,10 +44,6 @@ console.warn(error); // no error thrown, so it's undefined
 import { of } from "https://deno.land/x/denof/mod.ts";
 // Bundled from URL
 import { of } from "https://deno.land/x/denof/denof.bundle.js";
-// Inline raw
-import { of } from "https://deno.land/x/denof/mod.ts";
-// Inline bundle
-import { of } from "https://deno.land/x/denof/denof.bundle.js";
 ```
 
 ### Import from "importmap.json"
