@@ -14,7 +14,12 @@ If you use this project don't forget to give a ⭐ [star](https://github.com/r37
 ## 💬 Usage
 
 ```typescript
-import { ofAnyCase } from "https://deno.land/x/denof/mod.ts";
+import {
+  Of, of,
+  ofAny, ofAnyCase, ofCase, ofError,
+  ofIt, ofOutcome, ofResult, ofSync
+} from "https://deno.land/x/denof/mod.ts";
+
 const promise = () => new Promise((resolve, _reject) => {
   resolve({ data: true });
 });
@@ -30,77 +35,34 @@ console.log(result); // { data: true }
 console.warn(error); // no error thrown, so it's undefined
 ```
 
-## Import
+## ⚙️Install
 
 ### Import from URL
 
 ```typescript
-import {
-  Of, of,
-  ofAny, ofAnyCase, ofCase, ofError,
-  ofIt, ofOutcome, ofResult, ofSync
-} from "https://deno.land/x/denof/mod.ts";
-```
-
-### Bundled from URL
-
-```typescript
-import {
-  Of, of,
-  ofAny, ofAnyCase, ofCase, ofError,
-  ofIt, ofOutcome, ofResult, ofSync
-} from "https://deno.land/x/denof/denof.bundle.js";
-```
-
-### Inline
-
-#### Raw
-
-```javascript
+// From URL
 import { of } from "https://deno.land/x/denof/mod.ts";
-```
-
-#### Bundle
-
-```javascript
+// Bundled from URL
+import { of } from "https://deno.land/x/denof/denof.bundle.js";
+// Inline raw
+import { of } from "https://deno.land/x/denof/mod.ts";
+// Inline bundle
 import { of } from "https://deno.land/x/denof/denof.bundle.js";
 ```
 
-### "importmap.json"
-
-#### GitHub
+### Import from "importmap.json"
 
 ```json
 {
   "imports": {
-    "of": "https://raw.githubusercontent.com/r37r0m0d3l/denof/master/mod.ts"
+    "denof": "https://deno.land/x/denof/mod.ts"
   }
 }
 ```
-
-#### DenoLand
-
-```json
-{
-  "imports": {
-    "of": "https://deno.land/x/denof/mod.ts"
-  }
-}
-```
-
-### Import
-
-Shortcut:
 
 ```typescript
-import {
-  Of, of,
-  ofAny, ofAnyCase, ofCase, ofError,
-  ofIt, ofOutcome, ofResult, ofSync
-} from "of";
+import { of } from "denof";
 ```
-
-Run:
 
 ```bash
 deno run --importmap=importmap.json --unstable your-script.js
