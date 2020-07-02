@@ -6,6 +6,8 @@ Full documentation here - [https://of.js.org/](https://of.js.org/).
 
 If you use this project don't forget to give a ⭐ [star](https://github.com/r37r0m0d3l/denof) ⭐ to it.
 
+•• [DenoOf Documentation](https://of.js.org/) •• [JavaScript Repository](https://github.com/r37r0m0d3l/of) •• [Deno Repository](https://github.com/r37r0m0d3l/denof) ••
+
 [![Buy Me A Coffee][buymeacoffee-img]][buymeacoffee-url]
 ![Tests](https://github.com/r37r0m0d3l/denof/workflows/Tests/badge.svg)
 
@@ -50,9 +52,33 @@ import {
 } from "https://deno.land/x/denof/denof.bundle.js";
 ```
 
-### From `importmap.json`.
+### Inline
 
-Add entry to `imports`
+#### Raw
+
+```javascript
+import { of } from "https://deno.land/x/denof/mod.ts";
+```
+
+#### Bundle
+
+```javascript
+import { of } from "https://deno.land/x/denof/denof.bundle.js";
+```
+
+### "importmap.json"
+
+#### GitHub
+
+```json
+{
+  "imports": {
+    "of": "https://raw.githubusercontent.com/r37r0m0d3l/denof/master/mod.ts"
+  }
+}
+```
+
+#### DenoLand
 
 ```json
 {
@@ -62,13 +88,9 @@ Add entry to `imports`
 }
 ```
 
-Then run with `importmap` argument.
+### Import
 
-```bash
-deno run --importmap=importmap.json --unstable YourExecutableFile.ts
-```
-
-Now you can import with shortcut
+Shortcut:
 
 ```typescript
 import {
@@ -76,6 +98,12 @@ import {
   ofAny, ofAnyCase, ofCase, ofError,
   ofIt, ofOutcome, ofResult, ofSync
 } from "of";
+```
+
+Run:
+
+```bash
+deno run --importmap=importmap.json --unstable your-script.js
 ```
 
 ## 🗺️ Discover more
