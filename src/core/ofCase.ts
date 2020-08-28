@@ -42,7 +42,7 @@ export function ofCase<
       new Promise((_resolve, reject) => {
         setTimeout(() => {
           reject(new Error(`Timeout: ${theConfig.timeout}ms`));
-        });
+        }, theConfig.timeout);
       }),
     ])
     : Promise.resolve(promise))
